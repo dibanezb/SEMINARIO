@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Jude moon">
+    <title>Seminario Visualización de datos</title>
+
+    <!-- load d3 and dimple libraries -->
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+
+    <!-- add styles to text and graphics -->
+    <style>
+        h1 {
+            background-color: black;
+            color: floralwhite;
+            font-family: Helvetica, sans-serif;
+            width: 100%;
+            height: 80px;
+            text-align: center;
+            padding-top: 30px;
+        }
+        h2 {
+            font-size: 1.4em;
+            text-transform: uppercase;
+            font-family: Helvetica;
+            color: #000;
+            margin-top: 0;
+        }
+        h3 {
+            font-family: Helvetica, sans-serif;
+            text-align: center;
+        }
+        h4 {
+            font-family: Helvetica, sans-serif;
+            text-align: left;
+        }
+        div.text {
+            font-family: Helvetica;
+            padding: 5px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        hn {
+           background-color: blue;
+            color: floralwhite;
+            font-family: Helvetica, sans-serif;
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+            padding-right: 5px
+        }
+    </style>
+</head>
+
+<body bgcolor="afafaf">
+    <h1 class="main-title">Seminario Visualización de datos </h1>
+    <h4 class="main-autor">Nombre: David Ibáñez Brambila</h3>
+    <h4 class="main-url">Url: <a href="https://js-buruvb.stackblitz.io/">https://js-buruvb.stackblitz.io/</a></h3>
+    <br>
+    <hn class="tit1">Accidentes Vehiculares en México</hn>
+        <br>
+    <br>
+    <div class="metadato  ">
+              La audiencia de este proyecto es el público en general y, principalmente, el profesor Raúl Reyero de la materia de Visualización de Datos.
+              <br>
+              El objetivo consiste en mostrar que lsa relaciones entre el número de accidentes vehiculares y el número de heridos o muertos en México, no siempre es proporcional y, más aún, cambia también entre los estados mexicanos.
+              <br>
+              Escogí como herramientas de trabajo para esta actividad, tableau por su gran calidad al mostrar gráficos que permite embeber los gráficos en páginas web con el fin de que el usuario pueda interactuar con los gráficos y no sean estáticos.
+              <br>
+              También estoy utilizaando Google Sheets para cumplir el requisito de usar al menos dos herramientas de las vistas en el curso, aunque podríamos también habernos conectado al servidor SQL Server en la nube donde subimos los datos del INEGI y creamos las tablas de resumen (los datos originales tienen registros de cientos de miles por año con lo que sería muy tardado - y, posiblemente, crearíamos overslows - considerando todos).
+              <br>
+              Fue agregado el campo "estado" para indicar la descripción de los mismos ya que el campo "edo" es el número de estado como lo considera INEGI. Para ello generé una nueva hoja en el libro de Google sheets y mediante la función VLOOKUP obtuve el nombre correspondiente.
+            </div>
+    <br>
+    <br>
+    El número de muertos en los accidentes vehiculares pareciera que debe tener una relación con el número de accidentes, al menos eso parece ser la lógica: a mayor número de accidentes, mayor número de muertos y a menor número de accidentes, menor número de muertos.
+    <br><br>
+    El INEGI (Instituto Nacional de Estadística, Geografía e Informática) es el organismo de México que, además de llevar a cabo los censos poblacionales, económicos y agropecuarios, lleva divseras estadísticas, entre ellas las de accidentes vehiculares en zonas no federales.
+    <br><br>
+    Tomando cifras del INEGI, podemos ver que lo mencionado en el primer párrafo no es del todo cierto, al menos no sucede así en México y, más aún, esto cambia de estado a estado.
+    <br><br>
+    Los datos han sido tomados de <a href="https://www.inegi.org.mx/programas/accidentes/?ps=Microdatos">https://www.inegi.org.mx/programas/accidentes/?ps=Microdatos</a> aunque han sido resumidos. Estamos considerando para este ejercicio de 1997 a 2006. (Estos datos no son la totalidad de los accidentes ya que, como puede leerse en la página del INEGI, algunos estados no proporcionaron información de ciertos municipios y, desde luego, no estamos considerando los accidentes en que los involucrados llegan a un arreglo sin recurrir a la autoridad por lo que los gobiernos municipales o estatales no se enteran).
+    <br>
+    <br>
+    
+    Observamos en el siguiente gráfico datos extraños: vemos que en Aguascalientes (en azul oscuro a la derecha de las barras), el número de muertos es grande en 1997 comparado con los otros años, sin embargo, el número de heridos y vehículos accidentados es menor que en los demás años (casi en todos los casos).
+    <br>
+    Otro estado que llama la atención es Nuevo León (en café oscuro): el número de muertos disminuye los primeros años pero el número de vehículos accidentados crece en casi todos.
+    <script type='text/javascript' src='https://10ay.online.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 90%; height: 927px;'><object class='tableauViz' width=90% height='927' style='display:none;'><param name='host_url' value='https%3A%2F%2F10ay.online.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;admindibse5' /><param name='name' value='SeminarioMBIG07&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='no' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+    <div class="metadato  ">
+              Escogí este tipo de gráfica pues nos permite ver las diferencias por estado mostrando todos y separados por año.
+    </div>
+
+<script type='text/javascript' src='https://10ay.online.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 90%; height: 827px;'><object class='tableauViz' width=90% height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2F10ay.online.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;admindibse5' /><param name='name' value='SeminarioMBIG07a&#47;Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='no' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+</body>
+</html>
